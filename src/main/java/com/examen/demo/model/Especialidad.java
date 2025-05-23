@@ -13,7 +13,7 @@ public class Especialidad {
         this.especialidad = especialidad;
     }
 
-    private String getespecialidad (){
+    private String getEspecialidad (){
          return especialidad;
     }
 

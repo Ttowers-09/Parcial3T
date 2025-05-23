@@ -32,9 +32,20 @@ public class Citas {
     private String ubicación;
     private String estado;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm", locale = "es-CO", timezone = "America/Bogota")
+    private LocalTime initHour;
+
+    /**
+     * Hora de finalización de la reserva.
+     * Formato: HH:mm (Ejemplo: 16:30)
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm", locale = "es-CO", timezone = "America/Bogota")
+    private LocalTime finalHour;
 
 
-    public Citas (String nombreCompleto, int cedula, String correoElectronico, LocalDate fecha, String nombreDoctorQueAtiende, String ubicación, String especialidad, String estado){
+
+
+    public Citas (String nombreCompleto, int cedula, String correoElectronico, LocalDate fecha, String nombreDoctorQueAtiende, String ubicación, String especialidad, String estado, LocalTime initHour, LocalTime finalHour){
         this.nombreCompleto = nombreCompleto;
         this.cedula = cedula;
         this.correoElectronico = correoElectronico;
@@ -43,6 +54,8 @@ public class Citas {
         this.nombreDoctorQueAtiende = nombreDoctorQueAtiende;
         this.ubicación = ubicación;
         this.estado = estado;
+        this.initHour = initHour;
+        this.finalHour = finalHour;
 
         /**
          * Getters y setters
